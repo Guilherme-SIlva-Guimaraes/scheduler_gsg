@@ -1,0 +1,5 @@
+*
+!.gitignore
+!scheduler.c
+!Makefile
+!evidencias.log
