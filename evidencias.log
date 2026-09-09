@@ -618,3 +618,66 @@ KILLED
 [?2004lexit
 
 Script done on 2026-09-09 16:36:42-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-09-09 16:55:25-03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="150" LINES="13"]
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ date
+[?2004lWed Sep  9 16:55:28 -03 2026
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake clean[27mmake clean
+[?2004lrm -f scheduler
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ make
+[?2004lgcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mrm -f rate_gsg4.out edf_gsg4.out[27mrm -f rate_gsg4.out edf_gsg4.out
+[?2004l[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate voo.txt[27m./scheduler rate voo.txt
+[?2004lidle for 10 units
+idle for 2 units
+idle for 7 units
+idle for 12 units
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
+[?2004lexit: 0
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mcat rate_gsg4.out[27mcat rate_gsg4.out
+[?2004lcat: rate_gsg4.out: No such file or directory
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler edf voo.txt[27m./scheduler edf voo.txt
+[?2004lidle for 9 units
+idle for 2 units
+idle for 7 units
+idle for 12 units
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
+[?2004lexit: 0
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mcat edf_gsg4.out[27mcat edf_gsg4.out
+[?2004lcat: edf_gsg4.out: No such file or directory
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mls rate_gsg4.out edf_gsg4.out[27mls rate_gsg4.out edf_gsg4.out
+[?2004lls: cannot access 'rate_gsg4.out': No such file or directory
+ls: cannot access 'edf_gsg4.out': No such file or directory
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mexit[27mexit
+[?2004lexit
+
+Script done on 2026-09-09 16:55:54-03:00 [COMMAND_EXIT_CODE="2"]
+Script started on 2026-09-09 16:59:19-03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="150" LINES="13"]
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ date
+[?2004lWed Sep  9 16:59:23 -03 2026
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake clean[27mmake clean
+[?2004lrm -f scheduler
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ make
+[?2004lgcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mrm -f rate_gsg4.out edf_gsg4.out gsg4.txt[27mrm -f rate_gsg4.out edf_gsg4.out gsg4.txt
+[?2004l[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate voo.txt[27m./scheduler rate voo.txt
+[?2004l[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
+[?2004lexit: 0
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mcat rate_gsg4.out[27mcat rate_gsg4.out
+[?2004lcat: rate_gsg4.out: No such file or directory
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler edf voo.txt[27m./scheduler edf voo.txt
+[?2004l[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
+[?2004lexit: 0
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mcat edf_gsg4.out[27mcat edf_gsg4.out
+[?2004lcat: edf_gsg4.out: No such file or directory
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mls rate_gsg4.out edf_gsg4.out[27mls rate_gsg4.out edf_gsg4.out
+[?2004lls: cannot access 'rate_gsg4.out': No such file or directory
+ls: cannot access 'edf_gsg4.out': No such file or directory
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mexit[27mexit
+[?2004lexit
+
+Script done on 2026-09-09 16:59:57-03:00 [COMMAND_EXIT_CODE="2"]
+Script started on 2026-09-09 17:02:10-03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="150" LINES="13"]
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ date[K[K[K[Kexit
+[?2004lexit
+
+Script done on 2026-09-09 17:02:17-03:00 [COMMAND_EXIT_CODE="0"]

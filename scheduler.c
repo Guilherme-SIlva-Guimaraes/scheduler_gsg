@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h>
+#include <ctype.h>
 
 #define LOGIN "gsg4"
 #define MAX_NOME_TAREFA 32
@@ -339,16 +340,49 @@ void simular(Tarefa *tarefas, int quantidade, int tempo_total,
     free(acabou_de_terminar);
 }
 
-void imprimir_historico_debug(const Tarefa *tarefas, const Historico *h) {
-    for (int i = 0; i < h->quantidade; i++) {
-        Segmento s = h->segmentos[i];
-        if (s.indice_tarefa == -1) {
-            printf("idle for %d units\n", s.duracao);
+void gerar_arquivo_saida(const char *algoritmo, const Tarefa *tarefas, int quantidade, const Historico *h) {
+    char nome_arquivo[64];
+    snprintf(nome_arquivo, sizeof(nome_arquivo), "%s_%s.out", algoritmo, LOGIN);
+
+    FILE *out = fopen(nome_arquivo, "w");
+    if (out == NULL) {
+        erro_fatal("nao foi possivel criar o arquivo de saida");
+    }
+
+    char algoritmo_maiusculo[16];
+    int i;
+    for (i = 0; algoritmo[i] != '\0' && i < (int) sizeof(algoritmo_maiusculo) - 1; i++) {
+        algoritmo_maiusculo[i] = (char) toupper((unsigned char) algoritmo[i]);
+    }
+    algoritmo_maiusculo[i] = '\0';
+
+    fprintf(out, "EXECUTION BY %s\n", algoritmo_maiusculo);
+    for (int s = 0; s < h->quantidade; s++) {
+        Segmento seg = h->segmentos[s];
+        if (seg.indice_tarefa == -1) {
+            fprintf(out, "idle for %d units\n", seg.duracao);
         } else {
-            printf("[%s] for %d units - %c\n",
-                   tarefas[s.indice_tarefa].nome, s.duracao, s.razao);
+            fprintf(out, "[%s] for %d units - %c\n",
+                    tarefas[seg.indice_tarefa].nome, seg.duracao, seg.razao);
         }
     }
+
+    fprintf(out, "\nLOST DEADLINES\n");
+    for (int t = 0; t < quantidade; t++) {
+        fprintf(out, "[%s] %d\n", tarefas[t].nome, tarefas[t].perdidas);
+    }
+
+    fprintf(out, "\nCOMPLETE EXECUTION\n");
+    for (int t = 0; t < quantidade; t++) {
+        fprintf(out, "[%s] %d\n", tarefas[t].nome, tarefas[t].concluidas);
+    }
+
+    fprintf(out, "\nKILLED\n");
+    for (int t = 0; t < quantidade; t++) {
+        fprintf(out, "[%s] %d\n", tarefas[t].nome, tarefas[t].morta);
+    }
+
+    fclose(out);
 }
 
 int main(int argc, char **argv) {
@@ -374,22 +408,7 @@ int main(int argc, char **argv) {
     Historico historico = { NULL, 0, 0 };
     simular(tarefas, quantidade, tempo_total, prioridade, &historico);
 
-    imprimir_historico_debug(tarefas, &historico);
-
-    printf("\nLOST DEADLINES\n");
-    for (int i = 0; i < quantidade; i++) {
-        printf("[%s] %d\n", tarefas[i].nome, tarefas[i].perdidas);
-    }
-
-    printf("\nCOMPLETE EXECUTION\n");
-    for (int i = 0; i < quantidade; i++) {
-        printf("[%s] %d\n", tarefas[i].nome, tarefas[i].concluidas);
-    }
-
-    printf("\nKILLED\n");
-    for (int i = 0; i < quantidade; i++) {
-        printf("[%s] %d\n", tarefas[i].nome, tarefas[i].morta);
-    }
+    gerar_arquivo_saida(argv[1], tarefas, quantidade, &historico);
 
     free(historico.segmentos);
     free(tarefas);
