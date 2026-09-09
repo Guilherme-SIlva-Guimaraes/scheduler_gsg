@@ -1,110 +1,193 @@
 Script started on 2026-09-08 17:42:11-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="156" LINES="12"]
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ date
-[?2004lTue Sep  8 17:42:17 -03 2026
+[?2004l
+Tue Sep  8 17:42:17 -03 2026
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ make ce[K[Kclean
-[?2004lrm -f scheduler
+[?2004l
+rm -f scheduler
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ make
-[?2004lgcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
+[?2004l
+gcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ darte[K[K[Kte
-[?2004lTue Sep  8 17:42:31 -03 2026
+[?2004l
+Tue Sep  8 17:42:31 -03 2026
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mcat > voo.txt << 'EOF'[27m
-[7m100[27m
-[7mATT 20 12 8[27m
-[7mNAV 50 30 15[27m
-[7mEOF[27m
-[7m./scheduler rate voo.txt[27m
-[7mecho "exit code: $?[27m[A[A[A[A[A[A]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ cat > voo.txt << 'EOF'
-100
-ATT 20 12 8
-NAV 50 30 15
-EOF
-./scheduler rate voo.txt
-echo "exit code: $?
-[?2004lATT periodo=20 deadline=12 burst=8
+
+[7m100[27m
+
+[7mATT 20 12 8[27m
+
+[7mNAV 50 30 15[27m
+
+[7mEOF[27m
+
+[7m./scheduler rate voo.txt[27m
+
+[7mecho "exit code: $?[27m[A[A[A[A[A[A
+]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ cat > voo.txt << 'EOF'
+
+100
+
+ATT 20 12 8
+
+NAV 50 30 15
+
+EOF
+
+./scheduler rate voo.txt
+
+echo "exit code: $?
+[?2004l
+ATT periodo=20 deadline=12 burst=8
 NAV periodo=50 deadline=30 burst=15
 [?2004h> echo "1. argc errado"
-./scheduler rate
-echo "exit: $?"
 
-echo "2. algoritmo invalido"
-./scheduler fifo voo.txt
-echo "exit: $?"
+./scheduler rate
 
-echo "3. arquivo inexistente"
-[7m./scheduler rate nao_existe.txt[27m
-[7mecho "exit: $?"[27m
+echo "exit: $?"
 
-[7mecho "4. campo faltando"[27m[7mprintf "100\nATT 20 12\n" > malformado.txt[27m[7m./scheduler rate malformado.txt[27m[7mecho "exit: $?"[27m[7mecho "5. C > D (viola especificacao)"[27m[7mprintf "100\nATT 20 5 8\n" > viola.txt[27m[7m./scheduler rate viola.txt[27m[7mecho "exit: $?"[27m[A[A[A./scheduler rate nao_existe.txt
-echo "exit: $?"
 
-echo "4. campo faltando"printf "100\nATT 20 12\n" > malformado.txt./scheduler rate malformado.txtecho "exit: $?"echo "5. C > D (viola especificacao)"printf "100\nATT 20 5 8\n" > viola.txt./scheduler rate viola.txtecho "exit: $?"
-[?2004lbash: syntax error near unexpected token `('
+echo "2. algoritmo invalido"
+
+./scheduler fifo voo.txt
+
+echo "exit: $?"
+
+
+echo "3. arquivo inexistente"
+
+[7m./scheduler rate nao_existe.txt[27m
+
+[7mecho "exit: $?"[27m
+
+
+[7mecho "4. campo faltando"[27m
+[7mprintf "100\nATT 20 12\n" > malformado.txt[27m
+[7m./scheduler rate malformado.txt[27m
+[7mecho "exit: $?"[27m
+[7mecho "5. C > D (viola especificacao)"[27m
+[7mprintf "100\nATT 20 5 8\n" > viola.txt[27m
+[7m./scheduler rate viola.txt[27m
+[7mecho "exit: $?"[27m[A[A[A
+./scheduler rate nao_existe.txt
+
+echo "exit: $?"
+
+
+echo "4. campo faltando"
+printf "100\nATT 20 12\n" > malformado.txt
+./scheduler rate malformado.txt
+echo "exit: $?"
+echo "5. C > D (viola especificacao)"
+printf "100\nATT 20 5 8\n" > viola.txt
+./scheduler rate viola.txt
+echo "exit: $?"
+[?2004l
+bash: syntax error near unexpected token `('
 erro: tarefa viola a restricao C <= D <= P
 exit: 1
-[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mls *.out 2>/dev/null && echo "PROBLEMA: .out foi criado" || echo "ok: nenhum .out criado"[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls *.out 2>/dev/null && echo "PROBLEMA: .out foi criado" || echo "ok: nenhum .out criado"
-[?2004lok: nenhum .out criado
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mls *.out 2>/dev/null && echo "PROBLEMA: .out foi criado" || echo "ok: nenhum .out criado"[27m
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls *.out 2>/dev/null && echo "PROBLEMA: .out foi criado" || echo "ok: nenhum .out criado"
+[?2004l
+ok: nenhum .out criado
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mrm -f malformado.txt viola.txt[27mrm -f malformado.txt viola.txt
-[?2004l[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mexit[27mexit
-[?2004lexit
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mexit[27mexit
+[?2004l
+exit
 
 Script done on 2026-09-08 17:43:23-03:00 [COMMAND_EXIT_CODE="0"]
 Script started on 2026-09-08 17:51:06-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="156" LINES="12"]
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mdate[27mdate
-[?2004lTue Sep  8 17:51:10 -03 2026
+[?2004l
+Tue Sep  8 17:51:10 -03 2026
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake clean[27mmake clean
-[?2004lrm -f scheduler
+[?2004l
+rm -f scheduler
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake[27mmake
-[?2004lgcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
+[?2004l
+gcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mcat > voo.txt << 'FIMVOO'[27m
-[7m100[27m
-[7mATT 20 12 8[27m
-[7mNAV 50 30 15[27m
-[7mFIMVOO[27m[A[A[A[A]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ cat > voo.txt << 'FIMVOO'
-100
-ATT 20 12 8
-NAV 50 30 15
-FIMVOO
-[?2004l[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate voo.txt[27m./scheduler rate voo.txt
-[?2004lATT periodo=20 deadline=12 burst=8
+
+[7m100[27m
+
+[7mATT 20 12 8[27m
+
+[7mNAV 50 30 15[27m
+
+[7mFIMVOO[27m[A[A[A[A
+]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ cat > voo.txt << 'FIMVOO'
+
+100
+
+ATT 20 12 8
+
+NAV 50 30 15
+
+FIMVOO
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate voo.txt[27m./scheduler rate voo.txt
+[?2004l
+ATT periodo=20 deadline=12 burst=8
 NAV periodo=50 deadline=30 burst=15
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit code: $?"[27mecho "exit code: $?"
-[?2004lexit code: 0
+[?2004l
+exit code: 0
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate[27m./scheduler rate
-[?2004lerro: uso: ./scheduler <rate|edf> <arquivo_entrada>
+[?2004l
+erro: uso: ./scheduler <rate|edf> <arquivo_entrada>
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
-[?2004lexit: 1
+[?2004l
+exit: 1
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler fifo voo.txt[27m./scheduler fifo voo.txt
-[?2004lerro: algoritmo invalido: use 'rate' ou 'edf'
+[?2004l
+erro: algoritmo invalido: use 'rate' ou 'edf'
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
-[?2004lexit: 1
+[?2004l
+exit: 1
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate nao_existe.txt[27m./scheduler rate nao_existe.txt
-[?2004lerro: nao foi possivel abrir o arquivo de entrada
+[?2004l
+erro: nao foi possivel abrir o arquivo de entrada
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
-[?2004lexit: 1
+[?2004l
+exit: 1
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mprintf "100\nATT 20 12\n" > malformado.txt[27mprintf "100\nATT 20 12\n" > malformado.txt
-[?2004l[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate malformado.txt[27m./scheduler rate malformado.txt
-[?2004lerro: linha de tarefa malformada no arquivo de entrada
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate malformado.txt[27m./scheduler rate malformado.txt
+[?2004l
+erro: linha de tarefa malformada no arquivo de entrada
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
-[?2004lexit: 1
+[?2004l
+exit: 1
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mprintf "100\nATT 20 5 8\n" > viola.txt[27mprintf "100\nATT 20 5 8\n" > viola.txt
-[?2004l[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate viola.txt[27m./scheduler rate viola.txt
-[?2004lerro: tarefa viola a restricao C <= D <= P
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate viola.txt[27m./scheduler rate viola.txt
+[?2004l
+erro: tarefa viola a restricao C <= D <= P
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
-[?2004lexit: 1
-[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mls *.out 2>/dev/null && echo "PROBLEMA out foi criado" || echo "ok nenhum out criado"[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls *.out 2>/dev/null && echo "PROBLEMA out foi criado" || echo "ok nenhum out criado"
-[?2004lok nenhum out criado
+[?2004l
+exit: 1
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mls *.out 2>/dev/null && echo "PROBLEMA out foi criado" || echo "ok nenhum out criado"[27m
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls *.out 2>/dev/null && echo "PROBLEMA out foi criado" || echo "ok nenhum out criado"
+[?2004l
+ok nenhum out criado
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mrm -f malformado.txt viola.txt[27mrm -f malformado.txt viola.txt
-[?2004l[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mdate[27mdate
-[?2004lTue Sep  8 17:52:18 -03 2026
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mdate[27mdate
+[?2004l
+Tue Sep  8 17:52:18 -03 2026
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mexit[27mexit
-[?2004lexit
+[?2004l
+exit
 
 Script done on 2026-09-08 17:52:21-03:00 [COMMAND_EXIT_CODE="0"]
 Script started on 2026-09-08 18:02:19-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="156" LINES="12"]
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake clean[27mmake clean
-[?2004lrm -f scheduler
+[?2004l
+rm -f scheduler
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake[27mmake
-[?2004lgcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
+[?2004l
+gcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
 [01m[Kscheduler.c:[m[K In function ‘[01m[Kler_tarefas[m[K’:
 [01m[Kscheduler.c:167:5:[m[K [01;35m[Kwarning: [m[K‘[01m[Kmain[m[K’ is normally a non-static function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmain-Wmain]8;;[m[K]
   167 | int [01;35m[Kmain[m[K(int argc, char **argv) {
@@ -119,14 +202,17 @@ Script started on 2026-09-08 18:02:19-03:00 [TERM="xterm-256color" TTY="/dev/pts
       |     [01;35m[K^~~~[m[K
 make: *** [makefile:9: scheduler] Error 1
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ exit
-[?2004lexit
+[?2004l
+exit
 
 Script done on 2026-09-08 18:02:37-03:00 [COMMAND_EXIT_CODE="2"]
 Script started on 2026-09-08 18:02:40-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="156" LINES="12"]
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake clean[27mmake clean
-[?2004lrm -f scheduler
+[?2004l
+rm -f scheduler
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake[27mmake
-[?2004lgcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
+[?2004l
+gcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
 [01m[Kscheduler.c:[m[K In function ‘[01m[Kler_tarefas[m[K’:
 [01m[Kscheduler.c:167:5:[m[K [01;35m[Kwarning: [m[K‘[01m[Kmain[m[K’ is normally a non-static function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmain-Wmain]8;;[m[K]
   167 | int [01;35m[Kmain[m[K(int argc, char **argv) {
@@ -141,19 +227,25 @@ Script started on 2026-09-08 18:02:40-03:00 [TERM="xterm-256color" TTY="/dev/pts
       |     [01;35m[K^~~~[m[K
 make: *** [makefile:9: scheduler] Error 1
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mprintf "100\nATT 20 20 8\n" > deadline_igual.txt[27mprintf "100\nATT 20 20 8\n" > deadline_igual.txt
-[?2004l[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate deadline_igual.txt[27m./scheduler rate deadline_igual.txt
-[?2004lbash: ./scheduler: No such file or directory
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate deadline_igual.txt[27m./scheduler rate deadline_igual.txt
+[?2004l
+bash: ./scheduler: No such file or directory
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
-[?2004lexit: 127
+[?2004l
+exit: 127
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mexit[27mexit
-[?2004lexit
+[?2004l
+exit
 
 Script done on 2026-09-08 18:02:57-03:00 [COMMAND_EXIT_CODE="0"]
 Script started on 2026-09-08 18:04:26-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="156" LINES="12"]
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake clean[27mmake clean
-[?2004lrm -f scheduler
+[?2004l
+rm -f scheduler
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake[27mmake
-[?2004lgcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
+[?2004l
+gcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
 [01m[Kscheduler.c:[m[K In function ‘[01m[Kler_tarefas[m[K’:
 [01m[Kscheduler.c:167:5:[m[K [01;35m[Kwarning: [m[K‘[01m[Kmain[m[K’ is normally a non-static function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmain-Wmain]8;;[m[K]
   167 | int [01;35m[Kmain[m[K(int argc, char **argv) {
@@ -168,105 +260,295 @@ Script started on 2026-09-08 18:04:26-03:00 [TERM="xterm-256color" TTY="/dev/pts
   167 | int [01;35m[Kmain[m[K(int argc, char **argv) {
       |     [01;35m[K^~~~[m[K
 make: *** [makefile:9: scheduler] Error 1
-[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [K]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [K]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [K]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [K]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mscript -a evidencias.log[27mscript -a evidencias.log
-[?2004lScript started, output log file is 'evidencias.log'.
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ 
+[K
+]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ 
+[K
+]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ 
+[K
+]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ 
+[K
+]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mscript -a evidencias.log[27mscript -a evidencias.log
+[?2004l
+Script started, output log file is 'evidencias.log'.
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake clean[27mmake clean
-[?2004lrm -f scheduler
+[?2004l
+rm -f scheduler
 [?2004h]0;guilherme@pc: /mntScript started on 2026-09-08 18:06:09-03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="156" LINES="2"]
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake clean[27mmake clean
-[?2004lrm -f scheduler
+[?2004l
+rm -f scheduler
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake[27m/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake[27mmake
-[?2004lgcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
+[?2004l
+gcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mprintf "100\nATT 20 20 8\n" > deadline_igual.txt[27mprintf "100\nATT 20 20 8\n" make
-[?2004lgcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
+[?2004l
+gcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mprintf "100\nATT 20 20 8\n" > deadline_igual.txt[27mprintf "100\nATT 20 20 8\n" > deadline_igual.txt
-[?2004l[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/U> deadline_igual.txt
-[?2004l[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate deadline_igual.txt[27m./scheduler rate deadline_igual.txt
-[?2004lATT periodo=20 deadline=20 burst=8
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/U> deadline_igual.txt
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate deadline_igual.txt[27m./scheduler rate deadline_igual.txt
+[?2004l
+ATT periodo=20 deadline=20 burst=8
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ sers/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate deadline_igual.txt[27m./scheduler rate deadline_igual.txt
-[?2004lATT periodo=20 deadline=20 burst=8
+[?2004l
+ATT periodo=20 deadline=20 burst=8
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
-[?2004lexit: 0
+[?2004l
+exit: 0
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ exit
-[?2004lexit
+[?2004l
+exit
 
 Script done on 2026-09-08 18:06:25-03:00 [COMMAND_EXIT_CODE="0"]
 [7mecho "exit: $?"[27mecho "exit: $?"
-[?2004lexit: 0
+[?2004l
+exit: 0
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ exit
-[?2004lexit
+[?2004l
+exit
 Script done.
-[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [K]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [K]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [K]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mscript -a evidencias.log[27mscript -a evidencias.log
-[?2004lScript started, output log file Script started on 2026-09-08 18:08:00-03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="156" LINES="16"]
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ 
+[K
+]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ 
+[K
+]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ 
+[K
+]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mscript -a evidencias.log[27mscript -a evidencias.log
+[?2004l
+Script started, output log file Script started on 2026-09-08 18:08:00-03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="156" LINES="16"]
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake clean[27mmake clean
-[?2004lrm -f scheduler
+[?2004l
+rm -f scheduler
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake[27mis 'evidencias.log'.
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake clean[27mmake clean
-[?2004lrm -f scheduler
+[?2004l
+rm -f scheduler
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake[27mmake
-[?2004lgcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
+[?2004l
+gcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
 [?2004h]0;gumake
-[?2004lgcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
+[?2004l
+gcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mprintf "100\nATT 20 12 8 EXTRA SOBRANDO\n" > muitos_tokens.txt[27mprintf "100\nATT 20 12 8 EXTRA SOBRANDO\n" > muitos_tokens.txt
-[?2004l[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsgilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mprintf "100\nATT 20 12 8 EXTRA SOBRANDO\n" > muitos_tokens.txt[27mprintf "100\nATT 20 12 8 EXTRA SOBRANDO\n" > muitos_tokens.txt
-[?2004l[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate muitos_tokens.txt[27m./scheduler rate muitos_tokens.txt
-[?2004lerro: linha de tarefa malformada no arquivo de entrada
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsgilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mprintf "100\nATT 20 12 8 EXTRA SOBRANDO\n" > muitos_tokens.txt[27mprintf "100\nATT 20 12 8 EXTRA SOBRANDO\n" > muitos_tokens.txt
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate muitos_tokens.txt[27m./scheduler rate muitos_tokens.txt
+[?2004l
+erro: linha de tarefa malformada no arquivo de entrada
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
-[?2004lexit: 1
+[?2004l
+exit: 1
 [?2004h]0;[7m./scheduler rate muitos_tokens.txt[27m./scheduler rate muitos_tokens.txt
-[?2004lerro: linha de tarefa malformada no arquivo de entrada
+[?2004l
+erro: linha de tarefa malformada no arquivo de entrada
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
-[?2004lexit: 1
+[?2004l
+exit: 1
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate voo.txt[27m./scheduler rate voo.txt
-[?2004lATT periodo=20 deadline=12 burst=8
+[?2004l
+ATT periodo=20 deadline=12 burst=8
 NAV periodo=50 deadline=30 burst=15
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27m[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate voo.txt[27m./scheduler rate voo.txt
-[?2004lATT periodo=20 deadline=12 burst=8
+[?2004l
+ATT periodo=20 deadline=12 burst=8
 NAV periodo=50 deadline=30 burst=15
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
-[?2004lexit: 0
+[?2004l
+exit: 0
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDecho "exit: $?"
-[?2004lexit: 0
+[?2004l
+exit: 0
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mexit[27mexit
-[?2004lexit
+[?2004l
+exit
 
 Script done on 2026-09-08 18:08:23-03:00 [COMMAND_EXIT_CODE="0"]
 rive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mexit[27mexit
-[?2004lexit
+[?2004l
+exit
 Script done.
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mcat > .gitignore << 'EOF'[27m
-[7mscheduler[27m
-[7m*.o[27m
-[7m*.out[27m
-[7mevidencias.log[27m
-[7mEOF[27m[A[A[A[A[A]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ cat > .gitignore << 'EOF'
-scheduler
-*.o
-*.out
-evidencias.log
-EOF
-[?2004l[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mcat > .gitignore << 'EOF'[27m
-[7m*[27m
-[7m!.gitignore[27m
-[7m!scheduler.c[27m
-[7m!Makefile[27m
-[7m!evidencias.log[27m
-[7mEOF[27m[A[A[A[A[A[A]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ cat > .gitignore << 'EOF'
-*
-!.gitignore
-!scheduler.c
-!Makefile
-!evidencias.log
-EOF
-[?2004l[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mcat .gitignore[27mcat .gitignore
-[?2004l*
+
+[7mscheduler[27m
+
+[7m*.o[27m
+
+[7m*.out[27m
+
+[7mevidencias.log[27m
+
+[7mEOF[27m[A[A[A[A[A
+]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ cat > .gitignore << 'EOF'
+
+scheduler
+
+*.o
+
+*.out
+
+evidencias.log
+
+EOF
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mcat > .gitignore << 'EOF'[27m
+
+[7m*[27m
+
+[7m!.gitignore[27m
+
+[7m!scheduler.c[27m
+
+[7m!Makefile[27m
+
+[7m!evidencias.log[27m
+
+[7mEOF[27m[A[A[A[A[A[A
+]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ cat > .gitignore << 'EOF'
+
+*
+
+!.gitignore
+
+!scheduler.c
+
+!Makefile
+
+!evidencias.log
+
+EOF
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mcat .gitignore[27mcat .gitignore
+[?2004l
+*
 !.gitignore
 !scheduler.c
 !Makefile
 !evidencias.log
 EOF[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mrm .gitignore[27mrm .gitignore
-[?2004l[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mprintf '*\n!.gitignore\n!scheduler.c\n!Makefile\n!evidencias.log\n' > .gitignore[27m[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cprintf '*\n!.gitignore\n!scheduler.c\n!Makefile\n!evidencias.log\n' > .gitignore
-[?2004l[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mcat .gitignore[27mcat .gitignore
-[?2004l*
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mprintf '*\n!.gitignore\n!scheduler.c\n!Makefile\n!evidencias.log\n' > .gitignore[27m
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cprintf '*\n!.gitignore\n!scheduler.c\n!Makefile\n!evidencias.log\n' > .gitignore
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mcat .gitignore[27mcat .gitignore
+[?2004l
+*
 !.gitignore
-!sc
+!scScript started on 2026-09-08 21:55:41-03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="150" LINES="7"]
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake clean[27mmake clean
+[?2004l
+rm -f scheduler
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake[27mmake
+[?2004l
+gcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mprintf "100\nATT 20 12 8\nNAV 50 30 15\n" > voo.txt[27mprintf "100\nATT 20 12 8\nNAV 50 30 15\n" > voo.txt
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate voo.txt[27m./scheduler rate voo.txt
+[?2004l
+ATT periodo=20 deadline=12 burst=8
+NAV periodo=50 deadline=30 burst=15
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
+[?2004l
+exit: 0
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate[27m./scheduler rate
+[?2004l
+erro: uso: ./scheduler <rate|edf> <arquivo_entrada>
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
+[?2004l
+exit: 1
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler fifo voo.txt[27m./scheduler fifo voo.txt
+[?2004l
+erro: algoritmo invalido: use 'rate' ou 'edf'
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
+[?2004l
+exit: 1
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate nao_existe.txt[27m./scheduler rate nao_existe.txt
+[?2004l
+erro: nao foi possivel abrir o arquivo de entrada
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
+[?2004l
+exit: 1
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mprintf "100\nATT 20 12\n" > malformado.txt[27mprintf "100\nATT 20 12\n" > malformado.txt
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate malformado.txt[27m./scheduler rate malformado.txt
+[?2004l
+erro: linha de tarefa malformada no arquivo de entrada
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
+[?2004l
+exit: 1
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mprintf "100\nATT 20 25 8\n" > viola_dp.txt[27mprintf "100\nATT 20 25 8\n" > viola_dp.txt
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate viola_dp.txt[27m./scheduler rate viola_dp.txt
+[?2004l
+erro: tarefa viola a restricao C <= D <= P
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
+[?2004l
+exit: 1
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mprintf "100\nATT 20 20 8\n" > deadline_igual.txt[27mprintf "100\nATT 20 20 8\n" > deadline_igual.txt
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate deadline_igual.txt[27m./scheduler rate deadline_igual.txt
+[?2004l
+ATT periodo=20 deadline=20 burst=8
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
+[?2004l
+exit: 0
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mprintf "100\nATT 20 12 8 EXTRA\n" > token_extra.txt[27mprintf "100\nATT 20 12 8 EXTRA\n" > token_extra.txt
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate token_extra.txt[27m./scheduler rate token_extra.txt
+[?2004l
+erro: linha de tarefa malformada no arquivo de entrada
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mecho "exit: $?"[27mecho "exit: $?"
+[?2004l
+exit: 1
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mls *.out 2>/dev/null && echo "PROBLEMA out foi criado" || echo "ok nenhum out criado"[27m
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Cls *.out 2>/dev/null && echo "PROBLEMA out foi criado" || echo "ok nenhum out criado"
+[?2004l
+ok nenhum out criado
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mrm -f malformado.txt viola_dp.txt deadline_igual.txt token_extra.txt[27m
+[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[C[Crm -f malformado.txt viola_dp.txt deadline_igual.txt token_extra.txt
+[?2004l
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mexit[27mexit
+[?2004l
+exit
+
+Script done on 2026-09-08 21:57:04-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-09-08 21:59:48-03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="150" LINES="7"]
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ make cela[K[K[K[K[K date[K[K[K[K[K[K[K[K[Kdate
+[?2004l
+Script started on 2026-09-08 22:37:52-03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="150" LINES="7"]
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake clean[27mmake clean
+[?2004lrm -f scheduler
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake[27mmake
+[?2004lgcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate voo.txt[27m./scheduler rate voo.txt
+[?2004l[ATT] for 8 units - F
+[NAV] for 12 units - H
+[ATT] for 8 units - F
+[NAV] for 2 units - L
+idle for 10 units
+[ATT] for 8 units - F
+idle for 2 units
+[NAV] for 10 units - H
+[ATT] for 8 units - F
+[NAV] for 5 units - F
+idle for 7 units
+[ATT] for 8 units - F
+idle for 12 units
+
+LOST DEADLINES
+[ATT] 0
+[NAV] 1
+
+COMPLETE EXECUTION
+[ATT] 5
+[NAV] 1
+
+KILLED
+[ATT] 0
+[NAV] 0
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mexit[27mexit
+[?2004lexit
+
+Script done on 2026-09-08 22:38:01-03:00 [COMMAND_EXIT_CODE="0"]
