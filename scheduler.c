@@ -199,8 +199,12 @@ void inicializar_estado_simulacao(Tarefa *tarefas, int quantidade) {
     }
 }
 
-int obter_prioridade_por_periodo(const Tarefa *tarefas, int indice) {
+int obter_prioridade_rate(const Tarefa *tarefas, int indice) {
     return tarefas[indice].periodo;
+}
+
+int obter_prioridade_edf(const Tarefa *tarefas, int indice) {
+    return tarefas[indice].prazo_absoluto;
 }
 
 int selecionar_tarefa(Tarefa *tarefas, int quantidade, FuncaoPrioridade prioridade) {
@@ -360,8 +364,15 @@ int main(int argc, char **argv) {
 
     inicializar_estado_simulacao(tarefas, quantidade);
 
+    FuncaoPrioridade prioridade;
+    if (strcmp(argv[1], "rate") == 0) {
+        prioridade = obter_prioridade_rate;
+    } else {
+        prioridade = obter_prioridade_edf;
+    }
+
     Historico historico = { NULL, 0, 0 };
-    simular(tarefas, quantidade, tempo_total, obter_prioridade_por_periodo, &historico);
+    simular(tarefas, quantidade, tempo_total, prioridade, &historico);
 
     imprimir_historico_debug(tarefas, &historico);
 

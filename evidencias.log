@@ -519,6 +519,47 @@ Script started on 2026-09-08 21:59:48-03:00 [TERM="xterm-256color" TTY="/dev/pts
 [?2004l
 Script started on 2026-09-08 22:37:52-03:00 [TERM="xterm-256color" TTY="/dev/pts/3" COLUMNS="150" LINES="7"]
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake clean[27mmake clean
+[?2004l
+rm -f scheduler
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake[27mmake
+[?2004l
+gcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler rate voo.txt[27m./scheduler rate voo.txt
+[?2004l
+[ATT] for 8 units - F
+[NAV] for 12 units - H
+[ATT] for 8 units - F
+[NAV] for 2 units - L
+idle for 10 units
+[ATT] for 8 units - F
+idle for 2 units
+[NAV] for 10 units - H
+[ATT] for 8 units - F
+[NAV] for 5 units - F
+idle for 7 units
+[ATT] for 8 units - F
+idle for 12 units
+
+LOST DEADLINES
+[ATT] 0
+[NAV] 1
+
+COMPLETE EXECUTION
+[ATT] 5
+[NAV] 1
+
+KILLED
+[ATT] 0
+[NAV] 0
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mexit[27mexit
+[?2004l
+exit
+
+Script done on 2026-09-08 22:38:01-03:00 [COMMAND_EXIT_CODE="0"]
+Script started on 2026-09-09 16:36:23-03:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="156" LINES="13"]
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake clean[27m[1Pmake clea[K[K[K[K[K[K[K[K[Kdate
+[?2004lWed Sep  9 16:36:29 -03 2026
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake clean[27mmake clean
 [?2004lrm -f scheduler
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mmake[27mmake
 [?2004lgcc -Wall -Wextra -std=c11 -O2 -o scheduler scheduler.c
@@ -548,7 +589,32 @@ COMPLETE EXECUTION
 KILLED
 [ATT] 0
 [NAV] 0
+[?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7m./scheduler edf voo.txt[27m./scheduler edf voo.txt
+[?2004l[ATT] for 8 units - F
+[NAV] for 15 units - F
+[ATT] for 8 units - F
+idle for 9 units
+[ATT] for 8 units - F
+idle for 2 units
+[NAV] for 10 units - H
+[ATT] for 8 units - F
+[NAV] for 5 units - F
+idle for 7 units
+[ATT] for 8 units - F
+idle for 12 units
+
+LOST DEADLINES
+[ATT] 0
+[NAV] 0
+
+COMPLETE EXECUTION
+[ATT] 5
+[NAV] 2
+
+KILLED
+[ATT] 0
+[NAV] 0
 [?2004h]0;guilherme@pc: /mnt/c/Users/guilherme/OneDrive/Documentos/gsg[01;32mguilherme@pc[00m:[01;34m/mnt/c/Users/guilherme/OneDrive/Documentos/gsg[00m$ [7mexit[27mexit
 [?2004lexit
 
-Script done on 2026-09-08 22:38:01-03:00 [COMMAND_EXIT_CODE="0"]
+Script done on 2026-09-09 16:36:42-03:00 [COMMAND_EXIT_CODE="0"]
